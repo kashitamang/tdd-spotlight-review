@@ -11,6 +11,7 @@ import {
     makeLuckyGreeting,
     getSecondItem,
     getLastItem,
+    renderDogDiv,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -128,4 +129,14 @@ test('gets last item', (expect) => {
     const actual = getLastItem(arr);
 
     expect.deepEqual(actual, expected);
+});
+
+test('render dog div', (expect) => {
+    const dog = { name: 'Benny', age: 6 };
+
+    const expected = '<div><h1>Benny</h1><p>Benny is 6 years old</p></div>';
+
+    const actual = renderDogDiv(dog);
+
+    expect.equal(actual.outerHTML, expected);
 });
