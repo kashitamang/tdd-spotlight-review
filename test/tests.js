@@ -43,14 +43,14 @@ test('should multiple by seven', (expect) => {
     expect.equal(actual, expected);
 });
 
-skip('should return dog name in an li', (expect) => {
+test('should return dog name in an li', (expect) => {
     const dog = { name: 'Benny', age: 6 };
 
     const expected = '<li>Benny</li>';
 
     const actual = renderDogLI(dog);
 
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });
 
 test('should multiple by 12 then /2', (expect) => {
