@@ -1,7 +1,9 @@
 export function myFunction() {
     return true;
 }
-// This function should take a string and add return an new string that adds three exclamation points to the argument.
+
+// This function should take a string and add return an new string
+// that adds three exclamation points to the argument.
 /* 
 
 Input:
@@ -14,8 +16,8 @@ Output:
 
 */
 
-export function addExclamationPoints() {
-    return true;
+export function addExclamationPoints(string) {
+    return `${string}!!!`;
 }
 
 // This function should take in a number and multiply it by seven
@@ -31,7 +33,7 @@ Output:
 */
 
 export function multiplyBySeven(num) {
-    return true;
+    return num * 7;
 }
 
 // This function should take in a number and multiply it by twelve then cut the result in half
@@ -48,10 +50,12 @@ Output:
 */
 
 export function multiplyBy12ThenHalve(num) {
-    return true;
+    return (num * 12) / 2;
 }
 
-// This function should take in three numbers, divide the first by the second, then multiply the result by the third
+// This function should take in three numbers,
+// divide the first by the second,
+//then multiply the result by the third
 
 /* 
 Input:
@@ -63,11 +67,12 @@ Output:
 10 (because 8 divided by 4 is 2, times 5 is 10)
 */
 
-export function divideThenMultiply(firstNumber, secondNumber, thirdNumber) {
-    return true;
+export function divideThenMultiply(num1, num2, num3) {
+    return (num1 / num2) * num3;
 }
 
-// This function should take in three numbers and return those numbers in an array
+// This function should take in three numbers and
+// return those numbers in an array
 
 /* 
 Input:
@@ -79,8 +84,9 @@ Output:
 [8, 4, 5]
 */
 
-export function returnAsAnArray(firstNumber, secondNumber, thirdNumber) {
-    return true;
+export function returnAsAnArray(num1, num2, num3) {
+    const arr = [num1, num2, num3];
+    return arr;
 }
 
 // This function should take in three numbers and return those numbers mushed together as a string
@@ -95,11 +101,12 @@ Output:
 '845'
 */
 
-export function returnAsAString(firstNumber, secondNumber, thirdNumber) {
-    return true;
+export function returnAsAString(num1, num2, num3) {
+    return `${num1}${num2}${num3}`;
 }
 
-// This function should take in two numbers and return a greeting announcing that the sum of those numbers is today's lucky number
+// This function should take in two numbers and return a
+// greeting announcing that the sum of those numbers is today's lucky number
 
 /* 
 Input:
@@ -111,8 +118,9 @@ Output:
 'Hello! Your lucky number for the day is 12.'
 */
 
-export function makeLuckyGreeting(firstNumber, secondNumber) {
-    return true;
+export function makeLuckyGreeting(num1, num2) {
+    const luckyNum = num1 + num2;
+    return `Hello! Your lucky number for the day is ${luckyNum}.`;
 }
 
 // This function should take an array and return the second item in the array
@@ -128,8 +136,8 @@ Output:
 
 */
 
-export function getSecondItem(array) {
-    return true;
+export function getSecondItem(arr) {
+    return arr[1];
 }
 
 // This function should take an array and return the LAST item in the array, no matter the array's length
@@ -145,8 +153,9 @@ Output:
 
 */
 
-export function getLastItem(array) {
-    return true;
+export function getLastItem(arr) {
+    const index = arr.length - 1;
+    return arr[index];
 }
 
 // This function should take a dog object and return an <li> with the name of the dog
@@ -162,10 +171,13 @@ Output:
 */
 
 export function renderDogLI(dog) {
-    return true;
+    const li = document.createElement('li');
+    li.textContent = dog.name;
+    return li;
 }
 
-// This function should take a dog object and return a div with the dog's information
+// This function should take a dog object and
+// return a div with the dog's information
 /* 
 Input:
 
@@ -177,6 +189,16 @@ Output:
 
 */
 
-export function renderDogDiv() {
-    return true;
+export function renderDogDiv(dog) {
+    const name = dog.name;
+    const age = dog.age;
+    const div = document.createElement('div');
+    const h1 = document.createElement('h1');
+    const p = document.createElement('p');
+
+    div.appendChild(h1);
+    div.appendChild(p);
+    h1.textContent = name;
+    p.textContent = `${name} is ${age} years old`;
+    return div;
 }
